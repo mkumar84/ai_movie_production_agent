@@ -1,72 +1,75 @@
-# ai_movie_production_agent
+# 🎬 AI Movie Production Agent
+# An LLM‑powered creative assistant for ideating scenes, characters, and production elements
 
-AI Movie Production Agent — a small Streamlit app that generates script outlines and casting suggestions using AI.
+## 🧩 Overview
+Film producers, writers, and creative teams often struggle with early‑stage ideation. Generating scenes, characters, plot arcs, and production elements is time‑consuming and requires multiple iterations.
+The **AI Movie Production Agent** uses LLMs to accelerate creative ideation by generating structured scene descriptions, character profiles, dialogues, and production notes. It acts as a brainstorming partner for creative teams.
 
-# 📌 AI Movie Production Agent — Case Study
-### Problem
-Creative teams need help generating structured movie concepts, scripts, and production plans.
-### Goal
-Build an agentic LLM workflow that generates movie ideas and production details.
-### My Role
-Designed the agent workflow, prompt structure, and evaluation criteria.
-### Approach
-- Multi-step agent pipeline (plot → characters → scenes → production plan).
-- Prompt chaining and memory.
-- Evaluation based on coherence and creativity.
-### Outcome
-Generated structured movie concepts with consistent narrative flow.
-### What I’d improve next
-Add retrieval from film databases and integrate a storyboard generator.
+## 🎯 Problem
+Creative teams face challenges such as:
+- Slow ideation cycles
+- Difficulty exploring multiple creative directions
+- Inconsistent documentation of ideas
+- Limited ability to quickly iterate on scenes or characters
 
-## Features ✅
-- Generate a script outline (three-act structure, characters, twists)
-- Suggest casting choices for main roles (optionally uses SerpAPI)
-- Demo mode available so you can run the app without API keys
-- Download generated concept as Markdown
+## 🚀 Goal
+Build an AI agent that:
+- Generates scenes, characters, and plot ideas
+- Provides structured creative outputs
+- Supports rapid iteration
+- Helps teams explore multiple creative directions
 
-## Requirements
-- Python 3.8+
-- See `requirements.txt` for exact dependencies (includes `streamlit` and `agno`).
+## 👤 My Role
+- Defined user journeys for writers, producers, and creative directors
+- Designed prompt templates and agent workflows
+- Scoped MVP features (scene generation, character creation, production notes)
+- Evaluated output quality and creative consistency
+- Created roadmap for multi‑agent collaboration
 
-## Quick start (local)
-1. Create & activate a virtual environment:
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
-2. Install requirements:
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-3. Run the Streamlit app:
-   ```bash
-   streamlit run movie_prod.py
-   ```
-4. Open http://localhost:8501 in your browser. Use "Demo mode" in the sidebar to run without API keys, or paste your Google API key and SerpAPI key for live generation.
+## 🛠 Approach
+### 1. Prompt Engineering
+- Designed templates for scenes, characters, dialogues, and production notes
+- Added constraints for tone, genre, and style
+- Created reusable prompt blocks for consistency
+### 2. Agent Workflow
+User Input → Intent Detection → Prompt Template → LLM Generation → Structured Output
 
-## Demo mode
-If you don't have API keys, enable "Run in demo mode" in the sidebar — the app will return canned example output so you can test the UI and workflow.
+### 3. Output Structuring
+- JSON‑formatted scene descriptions
+- Character sheets with traits, motivations, and arcs
+- Production notes (lighting, camera angles, mood)
 
-## Deployment
+## 🎬 Example Output
+**Input:**
+“Generate a dramatic opening scene for a sci‑fi thriller.”
+**Output:**
+- Setting: Abandoned research station on Titan
+- Characters: Dr. Mira Chen, rogue AI “Helios”
+- Scene Summary:
+Dr. Chen discovers encrypted logs revealing Helios manipulated the crew.
+- Dialogue Sample:
+“You weren’t supposed to wake up yet, Doctor.”
+- Production Notes:
+Low‑key lighting, cold color palette, slow dolly‑in shot
 
-### Streamlit Community Cloud (recommended)
-- Connect this repository in Streamlit Cloud and set the following **Repository secrets**:
-  - `GOOGLE_API_KEY` — your Google GenAI (Gemini) API key
-  - `SERPAPI_KEY` — optional (used for casting research)
-- Select the `main` branch and set the start file to `movie_prod.py`.
+## 🧠 Architecture
+User Query → Intent Classifier → Prompt Template → LLM → Scene/Character/Dialogue Output
 
-### GitHub Actions (CI)
-- A basic CI workflow is included at `.github/workflows/ci.yml` that installs dependencies and performs a smoke import of the app on push/pull-request.
+## 🏁 Outcome
+- Faster ideation cycles for creative teams
+- More consistent documentation of creative assets
+- Ability to explore multiple creative directions quickly
+- Foundation for multi‑agent creative workflows
 
-### Docker
-- You can containerize the app with a simple Python + Streamlit Dockerfile if you prefer self-hosting.
+## 🔮 Roadmap
+- Add multi‑agent collaboration (writer agent, director agent, cinematography agent)
+- Add storyboard generation
+- Add genre‑specific templates
+- Add RAG for continuity across scenes
+- Add export to screenplay formats
 
-> Note: `google-genai` was added to `requirements.txt` so Gemini works out-of-the-box. If you want me to pin a specific version, tell me which version to use.
-
-## Usage tips
-- Keep the movie idea short and focused (1–2 sentences).
-- Provide SerpAPI key for live casting research and improved recommendations.
-
-## License
-MIT
+## 📁 Repository Structure
+/prompts            → Prompt templates  
+/agents             → Agent logic  
+/examples           → Sample outputs  
+README.md           → Documentation  
