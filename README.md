@@ -2,6 +2,22 @@
 
 AI Movie Production Agent — a small Streamlit app that generates script outlines and casting suggestions using AI.
 
+# 📌 AI Movie Production Agent — Case Study
+### Problem
+Creative teams need help generating structured movie concepts, scripts, and production plans.
+### Goal
+Build an agentic LLM workflow that generates movie ideas and production details.
+### My Role
+Designed the agent workflow, prompt structure, and evaluation criteria.
+### Approach
+- Multi-step agent pipeline (plot → characters → scenes → production plan).
+- Prompt chaining and memory.
+- Evaluation based on coherence and creativity.
+### Outcome
+Generated structured movie concepts with consistent narrative flow.
+### What I’d improve next
+Add retrieval from film databases and integrate a storyboard generator.
+
 ## Features ✅
 - Generate a script outline (three-act structure, characters, twists)
 - Suggest casting choices for main roles (optionally uses SerpAPI)
